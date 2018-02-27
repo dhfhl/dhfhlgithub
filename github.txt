@@ -1,0 +1,15 @@
+看状态
+git status
+
+删除服务器文件
+git rm -r --cached  "想要删除的文件"
+git commit -m "备注"
+git push origin master
+
+克隆服务器
+git clone git@github.com:dhfhl/dhfhlgithub.git
+
+添加文件到服务器
+git add 文件名
+git commit -m "备注"
+git push
