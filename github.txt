@@ -1,15 +1,18 @@
-¿´×´Ì¬
+çœ‹çŠ¶æ€
 git status
 
-É¾³ı·şÎñÆ÷ÎÄ¼ş
-git rm -r --cached  "ÏëÒªÉ¾³ıµÄÎÄ¼ş"
-git commit -m "±¸×¢"
+åˆ é™¤æœåŠ¡å™¨æ–‡ä»¶
+git rm -r --cached  "æƒ³è¦åˆ é™¤çš„æ–‡ä»¶"
+git commit -m "å¤‡æ³¨"
 git push origin master
 
-¿ËÂ¡·şÎñÆ÷
+å…‹éš†æœåŠ¡å™¨
 git clone git@github.com:dhfhl/dhfhlgithub.git
 
-Ìí¼ÓÎÄ¼şµ½·şÎñÆ÷
-git add ÎÄ¼şÃû
-git commit -m "±¸×¢"
+æ·»åŠ æ–‡ä»¶åˆ°æœåŠ¡å™¨
+git add æ–‡ä»¶å
+git commit -m "å¤‡æ³¨"
 git push
+
+é“¾å…‹è›‹è›‹
+0x35ebba2b2b983b8ce015ab40e533ec4a548e2c67
