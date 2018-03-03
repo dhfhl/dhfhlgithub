@@ -14,5 +14,10 @@ git add 文件名
 git commit -m "备注"
 git push
 
+开机自动联网
+cd /etc/sysconfig/network-scripts
+vi ifcfg-xxx
+ONBOOT=yes
+
 链克蛋蛋
 0x35ebba2b2b983b8ce015ab40e533ec4a548e2c67
