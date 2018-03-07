@@ -4,9 +4,9 @@
 [root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens33  
 TYPE=Ethernet  
 BOOTPROTO=static  
-IPADDR=192.168.0.116  
-NETMASK=255.255.255.0  
-GATEWAY=192.168.0.115  
+IPADDR=192.168.xxx.xxx  
+NETMASK=255.255.255.0  
+GATEWAY=192.168.xxx.xxx  
 DNS1=114.114.114.114  
 DNS2=8.8.8.8  
 DEFROUTE=yes  
