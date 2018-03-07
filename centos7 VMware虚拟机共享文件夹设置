@@ -1,0 +1,13 @@
+虚拟机挂载光盘-》虚拟机工具栏-》虚拟机-》重新安装VMware Tools
+复制VMwareTools"xxxxxxx".tar.gz到一个能找到的位置
+找到VMwareTools"xxxxxxx".tar.gz所在路径
+解压：tar zxvf VMwareTools"xxxxxxx".tar.gz
+进入解压文件夹：cd vmware-tools-distrib
+
+执行文件：./vmware-install.pl开始安装
+
+一路回车
+
+Enjoy,
+
+--the VMware team
