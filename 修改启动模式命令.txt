@@ -1,0 +1,8 @@
+查看开机命令：vi /etc/inittab
+# multi-user.target: analogous to runlevel 3命令行模式
+# graphical.target: analogous to runlevel 5图形模式
+
+获取当前开机模式命令：systemctl get-default
+
+修改启动为图形模式：systemctl set-default graphical.target
+修改启动为命令行模式：systemctl set-default multi-user.target
