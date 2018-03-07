@@ -1,0 +1,38 @@
+1、gcc错误
+Searching for GCC...
+The path "" is not valid path to the gcc binary.
+
+2、内核头文件问题
+Searching for a valid kernel header path...
+The path "" is not a valid path to the 3.10.0-229.el7.x86_64 kernel headers.
+
+解决方法：在安装vmtools前，先安装需要的文件
+[plain] view plain copy
+yum -y update  
+yum -y install kernel-headers kernel-devel gcc  
+reboot （安装完后要重启一下，很重要！）
+
+上面的命令搞定后，再进行vmtools的安装。原本错误的地方变成了这样：
+Searching for GCC...
+Detected GCC binary at "/bin/gcc".
+The path "/bin/gcc" appears to be a valid path to the gcc binary.
+Would you like to change it? [no] 
+
+
+Searching for a valid kernel header path...
+Detected the kernel headers at 
+"/lib/modules/3.10.0-229.4.2.el7.x86_64/build/include".
+The path "/lib/modules/3.10.0-229.4.2.el7.x86_64/build/include" appears to be a
+valid path to the 3.10.0-229.4.2.el7.x86_64 kernel headers.
+Would you like to change it? [no] 
+
+安装完成后可以看到提示：
+
+The configuration of VMware Tools 9.9.2 build-2496486 for Linux for this 
+running kernel completed successfully.
+
+Enjoy,
+
+--the VMware team
+
+然后设置虚拟机共享目录后即可在/mnt/hgfs下看到共享目录
