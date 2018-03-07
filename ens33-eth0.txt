@@ -1,0 +1,53 @@
+1.编辑网卡的配置文件 vi /etc/sysconfig/network-scripts/ifcfg-ens33 将里面的NAME和DEVICE项修改为eth0
+
+[plain] view plain copy
+[root@localhost ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens33  
+TYPE=Ethernet  
+BOOTPROTO=static  
+IPADDR=192.168.0.116  
+NETMASK=255.255.255.0  
+GATEWAY=192.168.0.115  
+DNS1=114.114.114.114  
+DNS2=8.8.8.8  
+DEFROUTE=yes  
+PEERDNS=yes  
+PEERROUTES=yes  
+IPV4_FAILURE_FATAL=no  
+IPV6INIT=yes  
+IPV6_AUTOCONF=yes  
+IPV6_DEFROUTE=yes  
+IPV6_PEERDNS=yes  
+IPV6_PEERROUTES=yes  
+IPV6_FAILURE_FATAL=no  
+IPV6_ADDR_GEN_MODE=stable-privacy  
+NAME=eth0  
+UUID=972a1eb3-049f-4db2-80f5-7d8fd28ef76f  
+DEVICE=eth0  
+ONBOOT=yes  
+2.重命名网卡配置文件ifcfg-ens33为ifcfg-eth0
+[plain] view plain copy
+[root@localhost ~]# cd /etc/sysconfig/network-scripts/  
+[root@localhost network-scripts]# mv ifcfg-ens33 ifcfg-eth0  
+3.编辑/etc/default/grub并加入“net.ifnames=0 biosdevname=0 ”到GRUBCMDLINELINUX变量
+[plain] view plain copy
+[root@localhost network-scripts]# vi /etc/default/grub  
+  
+GRUB_TIMEOUT=5  
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"  
+GRUB_DEFAULT=saved  
+GRUB_DISABLE_SUBMENU=true  
+GRUB_TERMINAL_OUTPUT="console"  
+GRUB_CMDLINE_LINUX="crashkernel=auto net.ifnames=0 biosdevname=0 rhgb quiet"  
+GRUB_DISABLE_RECOVERY="true"     
+4.运行命令grub2-mkconfig -o /boot/grub2/grub.cfg 来重新生成GRUB配置并更新内核参数。
+[plain] view plain copy
+[root@localhost network-scripts]# grub2-mkconfig -o /boot/grub2/grub.cfg  
+Generating grub configuration file ...  
+Found linux image: /boot/vmlinuz-3.10.0-514.el7.x86_64  
+Found initrd image: /boot/initramfs-3.10.0-514.el7.x86_64.img  
+Found linux image: /boot/vmlinuz-0-rescue-b7f83ca165964a47b8b283907b126140  
+Found initrd image: /boot/initramfs-0-rescue-b7f83ca165964a47b8b283907b126140.img  
+done  
+5.重启系统
+[plain] view plain copy
+[root@localhost network-scripts]# reboot
