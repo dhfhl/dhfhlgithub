@@ -1,0 +1,1 @@
+# vim /etc/default/grub 将 GRUB_TERMINAL_OUTPUT值由默认的"console"改为"gfxterm"
