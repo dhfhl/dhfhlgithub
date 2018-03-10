@@ -1,0 +1,43 @@
+在win7上刚装完centos7，一般都会遇到个问题~就是系统从起后win7启动引导消失了。解决步骤代码：
+1、vim /boot/grub2/grub.cfg
+2、找到  ### BEGIN /etc/grub.d/30_os-prober ###，在下面添加
+[plain] view plain copy
+menuentry "Windows 7" {  
+     insmod ntfs  
+     set root=(hd0,1)  
+     chainloader +1  
+}  
+
+
+（grub2从1计数，win7装在C盘上的可以在终端里输入 fdisk -l来确定下，一般win都是装在C的吧)
+
+3、wq! 
+
+4、reboot(重启之后会在启动页面第三行字符出现windos7,选中，按回车，OK！！)；
+
+
+但是这个文件是不推荐直接手动改的，因为系统更新会执行grub更新操作，这个文件就会被刷新，添加的内容就没了
+
+所以，我们这样做下处理：
+
+1、cd /etc/grub.d
+
+2、vim 40_custom
+
+写入以下内容
+
+
+[plain] view plain copy
+#!/bin/sh  
+exec tail -n +3 $0  
+# This file provides an easy way to add custom menu entries.  Simply type the  
+# menu entries you want to add after this comment.  Be careful not to change  
+# the 'exec tail' line above.  
+menuentry 'Windows7'{  
+set root=(hd0,1)  
+chainloader +1  
+}  
+就是前面提到的那个内容，实际上应该是在这个模板文件里输入
+
+
+3、再刷进boot下的文件：  grub2-mkconfig -o /boot/grub2/grub.cfg
