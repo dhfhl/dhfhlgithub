@@ -15,3 +15,7 @@ systemctl start sshd.service
 设置开机自动启动ssh服务
 
 systemctl enable sshd.service
+
+开启防火墙的22端口
+sudo firewall-cmd --zone=public --add-port=22/tcp --permanent  
+sudo service firewalld restart
