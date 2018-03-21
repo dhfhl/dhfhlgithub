@@ -1,0 +1,10 @@
+cloud.google.com注册
+然后回到googlecloud控制台。
+左侧-计算引擎（compute engine） - VM实例 -创建实例
+回到VM实例，然后点击SSH链接
+
+root权限
+su root
+
+安装配置SSR
+wget -N --no-check-certificate https://softs.fun/Bash/ssrmu.sh && chmod +x ssrmu.sh && bash ssrmu.sh
