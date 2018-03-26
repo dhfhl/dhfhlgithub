@@ -1,0 +1,2 @@
+安装zip、unzip命令:yum install -y unzip zip
+安装wget:yum -y install wget
