@@ -1,0 +1,24 @@
+下载python3源码
+wget https://www.python.org/ftp/python/3.5.0/Python-3.5.0.tgz
+ 
+下载完后对压缩包解压缩
+tar  xf Python-3.5.0.tgz ./
+ 
+进入解压缩完后的文件夹:
+cd Python-3.5.0
+ 
+我使用的是默认编译，可以查看README来进行操作
+./configure
+make&& make install
+
+替换python
+
+     >> cd /usr/bin
+
+     >>  mv python python.bak
+
+       其中有python, python2.7, python2三个文件，其实都是指向python2.7的，这里将python备份
+
+     >> sudo ln -s /usr/local/bin/python3.6 /usr/bin/python
+
+    >> python -V
