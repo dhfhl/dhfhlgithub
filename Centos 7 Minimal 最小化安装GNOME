@@ -1,0 +1,17 @@
+网上的关于centos7 minimal安装gnome的教程基本都是执行yum groupinstall "Server with GUI" 或者 yum groupinstall"GNOME Desktop"这种安装方式会装很多没用的组件，比如openJDK, office套件， firefox 浏览器等。能否只安装gnome本身呢，通过yum groupinfo "Server with GUI" 发现该命名安装的组件列表，答案是肯定的。
+
+具体步骤如下：
+
+#安装x11 窗口协议相关包
+yum groupinstall x11
+#安装gnome组件
+yum install gnome-classic-session
+#上面两步执行完后，执行startx就能进入图形界面了
+
+#安装这个能更好的显示
+yum install gnome-session-xsession
+
+yum install gnome-terminal #gui下的terminal工具
+yum install gnome-tweak-tool #gui下的系统属性设置工具
+
+备注:由于没有安装gnome-initial-setup组件，所以重启时需要我们在命令行重新创建用户和接受服务条件，安装提示在命名行下执行就好了。
