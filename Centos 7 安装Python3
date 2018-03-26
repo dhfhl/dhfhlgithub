@@ -1,11 +1,11 @@
 下载python3源码
-wget https://www.python.org/ftp/python/3.5.0/Python-3.5.0.tgz
+wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tgz
  
 下载完后对压缩包解压缩
-tar  xf Python-3.5.0.tgz ./
+tar  xf Python-3.6.4.tgz ./
  
 进入解压缩完后的文件夹:
-cd Python-3.5.0
+cd Python-3.6.4
  
 我使用的是默认编译，可以查看README来进行操作
 ./configure
