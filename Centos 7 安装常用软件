@@ -1,0 +1,138 @@
+先yum install man
+
+yum install wget
+
+这几个比较基本的命令
+
+linux mysql安装
+
+https://www.linuxidc.com/Linux/2016-09/134940.htm
+
+[html] view plain copy
+1.下载mysql的repo源  
+  
+$ wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm  
+  
+2.安装mysql-community-release-el7-5.noarch.rpm包  
+  
+$ sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm  
+  
+安装这个包后，会获得两个mysql的yum repo源：/etc/yum.repos.d/mysql-community.repo，/etc/yum.repos.d/mysql-community-source.repo。  
+  
+3.安装mysql  
+  
+$ sudo yum install mysql-server  
+  
+根据提示安装就可以了,不过安装完成后没有密码,需要重置密码  
+  
+4.重置mysql密码  
+  
+$ mysql -u root  
+  
+登录时有可能报这样的错：ERROR 2002 (HY000): Can‘t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock‘ (2)，原因是/var/lib/mysql的访问权限问题。下面的命令把/var/lib/mysql的拥有者改为当前用户：  
+  
+$ sudo chown -R root:root /var/lib/mysql  
+  
+重启mysql服务  
+  
+$ service mysqld restart  
+
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password:yes)
+修改my.cnf配置文件
+# sudo vi /etc/my.cnf
+
+在[mysqld]的段中加上一句：skip-grant-tables,如下：
+datadir=/var/lib/mysql  
+socket=/var/lib/mysql/mysql.sock  
+skip-grant-tables 
+
+
+重启服务
+# sudo systemctl restart mysqld
+
+登陆并修改密码
+# mysql -uroot
+
+# mysql> use mysql
+修改密码
+
+MySQL 5.7.6 以及最新版本：
+# mysql> update user set authentication_string=PASSWORD('newpass') where User='root';
+
+MySQL 5.7.5 或更早之前的版本r:
+# mysql> update user set password=PASSWORD('newpass') where User='root';
+
+登陆测试
+将my.cnf的设置修改回来，重启MySQL服务，并登陆测试：
+
+# mysql -u root -p
+
+输入设置的密码，测试修改成功。
+授权远程访问
+1.mysql -u root -p  //先登录mysql
+2.GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'your_root_password' WITH GRANT OPTION;
+3.FLUSH PRIVILEGES;
+
+
+Linux jdk安装
+
+[html] view plain copy
+安装之前先检查一下系统有没有已经安装  
+rpm -qa |grep java  
+rpm -qa |grep jdk  
+[html] view plain copy
+yum install java-1.8.0-openjdk* -y  
+使用命令检查是否安装成功(java版本)  
+java -version  
+
+
+Linux Tomcat安装(在jdk安装的前提下)
+
+https://www.cnblogs.com/qianzf/p/6986962.html
+
+[html] view plain copy
+yum install tomcat  
+[html] view plain copy
+yum install tomcat-webapps tomcat-admin-webapps  
+[html] view plain copy
+yum install tomcat-docs-webapp tomcat-javadoc  
+Tomcat文件目录在/usr/share/tomcat
+
+开机自动启动tomcat
+
+[html] view plain copy
+sudo systemctl enable tomcat  
+
+Linux nginx安装(在jdk安装的前提下)
+
+https://blog.csdn.net/oldguncm/article/details/78855000
+[html] view plain copy
+第一步 - 添加Nginx存储库  
+要添加CentOS 7 EPEL仓库，请打开终端并使用以下命令：  
+  
+sudo yum install epel-release  
+第二步 - 安装Nginx  
+现在Nginx存储库已经安装在您的服务器上，使用以下yum命令安装Nginx ：  
+  
+sudo yum install nginx  
+在对提示回答yes后，Nginx将在服务器上完成安装。  
+  
+第三步 - 启动Nginx  
+Nginx不会自行启动。要运行Nginx，请输入：  
+  
+sudo systemctl start nginx  
+如果您正在运行防火墙，请运行以下命令以允许HTTP和HTTPS通信：  
+  
+sudo firewall-cmd --permanent --zone=public --add-service=http   
+sudo firewall-cmd --permanent --zone=public --add-service=https  
+sudo firewall-cmd --reload  
+您将会看到默认的CentOS 7 Nginx网页，这是为了提供信息和测试目的。它应该看起来像这样：  
+CentOS 7 Nginx默认  
+  
+  
+如果看到这个页面，那么你的Web服务器现在已经正确安装了。  
+  
+如果想在系统启动时启用Nginx。请输入以下命令：  
+  
+sudo systemctl enable nginx  
+恭喜！Nginx现在已经安装并运行了！
