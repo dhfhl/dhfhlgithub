@@ -1,0 +1,15 @@
+Google Cloud Platform创建实例
+Xshell连接实例
+
+安装 V2Ray
+输入下面命令行回车，你可以复制过去，然后在 Xshell 界面按 Shift + Insert 即可粘贴，不能按 Ctrl + V 的。。
+bash <(curl -s -L https://233blog.com/v2ray.sh)
+
+如果提示 curl: command not found ，那是因为你的小鸡没装 Curl
+ubuntu/debian 系统安装 Curl 方法: apt-get update -y && apt-get install curl -y
+centos 系统安装 Curl 方法: yum update -y && yum install curl -y
+安装好 curl 之后就能安装脚本了
+然后选择安装，即是输入 1 回车
+选择传输协议，如果没有特别的需求，使用默认的 TCP 传输协议即可，直接回车
+选择端口，如果没有特别的需求，使用默认的端口即可，直接回车
+是否屏蔽广告，除非你真的需要，一般来说，直接回车即可
