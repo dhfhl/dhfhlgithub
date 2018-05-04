@@ -1,0 +1,14 @@
+wget http://www.djangoz.com/ssr
+sudo mv ssr /usr/local/bin
+sudo chmod 766 /usr/local/bin/ssr
+ssr install
+ssr config
+
+如果觉得vi编辑器不习惯，可以修改ssr文件，把默认编辑器设置为gedit。
+由于github链接可能失效，所以在自己的服务器上进行备份，觉得github慢的，可以用这个
+
+wget www.texfox.com/ssr
+sudo mv ssr /usr/local/bin
+sudo chmod 766 /usr/local/bin/ssr
+ssr install
+ssr config 设置SSR服务器
