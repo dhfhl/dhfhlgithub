@@ -1,0 +1,33 @@
+1. 安装openssh-server
+Centos7:sudo yum install openssh-server
+Ubuntu:sudo apt-get install openssh-server
+
+2. 修改配置文件[关键步骤]
+vi /etc/ssh/sshd_config
+
+# Authentication:
+LoginGraceTime 120
+#PermitRootLogin without-password
+PermitRootLogin yes
+StrictModes yes
+
+# To disable tunneled clear text passwords, change to no here!
+#PasswordAuthentication yes
+#PermitEmptyPasswords no
+PasswordAuthentication yes
+
+重启ssh的服务：
+systemctl restart sshd.service
+
+设置开机自动启动ssh服务
+systemctl enable sshd.service
+
+开启防火墙的22端口
+sudo firewall-cmd --zone=public --add-port=22/tcp --permanent  
+sudo service firewalld restart
+
+ssh基本命令：
+systemctl start sshd.service启动ssh
+systemctl stop sshd.service停止ssh
+systemctl restart sshd.service重启ssh
+systemctl enable sshd.service开机自动启动ssh
