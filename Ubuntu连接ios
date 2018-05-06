@@ -1,0 +1,7 @@
+到下面网址下载 libplist或libimobiledevice
+http://www.libimobiledevice.org
+https://github.com/libimobiledevice
+解压缩：tar zxvf 软件名
+进入解压软件目录：cd 已解压软件目录
+预编译：./configure
+安装：make && make install
