@@ -1,0 +1,8 @@
+挂载exfat格式命令：sudo apt-get install exfat-utils
+
+挂载ntfs格式命令：
+到这里下载最新版ntfs软件：https://www.tuxera.com/community/open-source-ntfs-3g/
+解压缩：tar zxvf 软件名
+进入解压软件目录：cd 已解压软件目录
+预编译：./configure
+安装：make && make install
