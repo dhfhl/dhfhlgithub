@@ -1,0 +1,9 @@
+源网站https://wiki.winehq.org/Ubuntu
+
+sudo dpkg --add-architecture i386
+wget -nc https://dl.winehq.org/wine-builds/Release.key
+sudo apt-key add Release.key
+sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
+sudo apt-get update
+Stable branch[稳定版]：sudo apt-get install --install-recommends winehq-stable
+Development branch[测试版]：sudo apt-get install --install-recommends winehq-devel
