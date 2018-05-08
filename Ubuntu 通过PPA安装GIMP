@@ -1,0 +1,3 @@
+sudo add-apt-repository ppa:otto-kesselgulasch/gimp
+sudo apt-get update   [Ubunutu18.04无需输入这条命令]
+sudo apt-get install gimp
