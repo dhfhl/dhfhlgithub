@@ -1,0 +1,25 @@
+问题解决：
+
+configure: error: 
+  Could not link test program to Python. Maybe the main Python library has been
+  installed in some non-standard library path. If so, pass it to configure,
+  via the LDFLAGS environment variable.
+  Example: ./configure LDFLAGS="-L/usr/non-standard-path/python/lib"
+  ============================================================================
+   ERROR!
+   You probably have to install the development version of the Python package
+   for your distribution.  The exact name of this package varies among them.
+
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+
+解决办法：一般可以通过sudo apt-get install python-dev解决
+
+​ 还有一种办法：sudo apt-get install libatlas-dev
