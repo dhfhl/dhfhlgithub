@@ -1,0 +1,4 @@
+显示错误：gzip: stdout: No space left on device 大多情况为boot分区200M
+运行命令：uname -r 查看使用内核版本
+查看内核：dpkg -l 'linux-image-*' | grep '^ii'
+删除多余内核：sudo apt-get purge linux-image-(多余内核版本)
