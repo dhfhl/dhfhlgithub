@@ -1,0 +1,3 @@
+Ubuntu FireFox播放HTML5无法播放的情况直接输入：
+sudo apt-get install ubuntu-restricted-extras
+然后重启FireFox浏览器即可
