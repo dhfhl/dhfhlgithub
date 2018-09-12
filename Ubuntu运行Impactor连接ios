@@ -1,4 +1,7 @@
-到下面网址下载 libplist或libimobiledevice
+到下面网址下载Impactor（运行Impactor必须安装libplist否则无法启动Impactor）
+http://www.cydiaimpactor.com/
+
+到下面网址下载libplist或libimobiledevice
 http://www.libimobiledevice.org
 https://github.com/libimobiledevice
 解压缩：tar zxvf 软件名
