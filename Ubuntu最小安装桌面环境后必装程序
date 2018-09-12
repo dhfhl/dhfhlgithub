@@ -2,6 +2,12 @@
 
 2.sudo apt-get install python
 
-3.sudo apt-get make
+3.sudo apt-get install gcc
 
-4.sudo apt install make-guile
+4.sudo apt-get install g++
+
+5.sudo apt-get install python-dev
+
+6.sudo apt-get install make
+
+7.sudo apt-get install make-guile
