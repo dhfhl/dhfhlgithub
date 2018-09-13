@@ -1,0 +1,16 @@
+sudo gedit /etc/alternatives/gdm3.css
+
+找到下列默认代码：
+#lockDialogGroup {
+ background: #2c001e url(resource:///org/gnome/shell/theme/noise-texture.png);
+ background-repeat: repeat;}
+ 修改为：
+ 
+#lockDialogGroup {
+ background: #2c001e url(file:///壁纸所在地址);         
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center; 
+}
+
+保存并重启即可
