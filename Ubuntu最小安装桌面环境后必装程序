@@ -1,3 +1,5 @@
+0.sudo apt-get update
+
 1.sudo apt-get install vpnc git
 
 2.sudo apt-get install python
