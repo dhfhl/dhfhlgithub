@@ -5,3 +5,6 @@ sudo apt install gnome-shell-extensions
 将“User themes”设置为ON
 重新打开Tweaks后去“Appearances”选项中，此时shell的感叹号就没了
 去这个网站下载主题即可 https://www.gnome-look.org
+在这里搜索插件https://extensions.gnome.org
+1.Dash to Dock
+2.Hide Top Bar
