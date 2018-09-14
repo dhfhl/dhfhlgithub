@@ -1,0 +1,13 @@
+直接修改：/usr/share/gnome-shell/theme/ubuntu.css
+
+在最底部加入：
+
+#panel,#panel *{
+
+height: 0px;
+
+color: rgba(0, 0, 0, 0)
+
+}
+
+重启电脑
