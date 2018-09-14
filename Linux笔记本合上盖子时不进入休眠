@@ -1,0 +1,9 @@
+sudo vim /etc/systemd/logind.conf
+
+找到下行
+#HandleLidSwitch=suspend
+
+改为
+HandleLidSwitch=ignore
+
+重启即可
