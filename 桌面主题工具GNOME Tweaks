@@ -1,6 +1,7 @@
 sudo apt-get update
 sudo apt-get install gnome-tweak-tool
 sudo apt install gnome-shell-extensions
+sudo apt-get install chrome-gnome-shell
 安装完成后打开Tweaks，选择“Extensions”选项
 将“User themes”设置为ON
 重新打开Tweaks后去“Appearances”选项中，此时shell的感叹号就没了
