@@ -7,5 +7,7 @@ sudo apt-get install chrome-gnome-shell
 重新打开Tweaks后去“Appearances”选项中，此时shell的感叹号就没了
 去这个网站下载主题即可 https://www.gnome-look.org
 在这里搜索插件https://extensions.gnome.org
-1.Dash to Dock
-2.Hide Top Bar
+1.Dash to Dock 左侧Dock栏编辑
+2.Hide Top Bar 顶部Top栏编辑
+3.Dash to Panel 合并Top Dock栏
+4.Arc Menu 类似Win7开始菜单
