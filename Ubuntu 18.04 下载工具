@@ -1,0 +1,10 @@
+uget和aria2都可以在“软件中心”中安装，但是版本太老啦，无法发挥作用，所以最好还是在终端中添加ppa进行安装：
+1.uget的安装：
+sudo add-apt-repository ppa:plushuang-tw/uget-stable
+sudo apt-get update
+sudo apt-get install uget
+2.aria2的安装：
+sudo add-apt-repository ppa:t-tujikawa/ppa
+sudo apt-get update
+sudo apt-get install aria2
+安装完aria2后，可以在终端中运行aria2 -v，查看版本和支持的特性。需要1.10以上的版本才能支持资.
