@@ -1,0 +1,10 @@
+su取得root权限；
+sudo chmod +x （.bundle文件）
+sudo ./（.bundle文件）
+
+以VMware为例：
+VMware储存路径：/home/dhfhl/Downloads/VMware-Workstation-Full-14.1.3-9474260.x86_64.bundle
+su取得root权限；
+进入储存路径：cd /home/dhfhl/Downloads
+授权sudo可执行：sudo chmod +x VMware-Workstation-Full-14.1.3-9474260.x86_64.bundle
+开始安装：sudo ./VMware-Workstation-Full-14.1.3-9474260.x86_64.bundle
