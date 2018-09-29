@@ -1,0 +1,23 @@
+后台发现/usr/share/package-data-downloads有一个文件ttf-mscorefonts-installer，用gedit打开，有一大串下载地址。
+下载的文件
+andale32.exe
+arial32.exe
+arialb32.exe
+comic32.exe
+courie32.exe
+georgi32.exe
+impact32.exe
+times32.exe
+trebuc32.exe
+verdan32.exe
+wd97vwr32.exe
+webdin32.exe
+手动把这些地址链接的文件下载下来，然后放到一个文件夹中。Treminal命令行执行sudo dpkg-reconfigure ttf-mscorefonts-installer指定文件夹的位置。
+然后输入以下命令
+cd /usr/share/package-data-downloads/
+sudo rm ttf-mscorefonts-installer
+cd /var/lib/update-notifier/package-data-downloads/
+sudo rm ttf-mscorefonts-installer
+cd /var/lib/update-notifier/user.d/
+sudo rm data-downloads-failed
+
