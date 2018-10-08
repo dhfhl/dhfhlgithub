@@ -1,13 +1,13 @@
-下载 Popcorn Time
-https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-64.tar.xz
-sudo mkdir /opt/popcorntime
-sudo tar Jxf Popcorn-Time-0.3.10-Linux-64.tar.xz -C /opt/popcorntime
-ln -sf /opt/popcorntime/Popcorn-Time /usr/bin/Popcorn-Time
+1.sudo wget https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-64.tar.xz
 
-创建后ctrl+x退出
-sudo nano /usr/share/applications/popcorntime.desktop
-编辑：
-sudo gedit /usr/share/applications/popcorntime.desktop
+2.sudo mkdir /opt/popcorntime
+
+3.sudo tar Jxf Popcorn-Time-0.3.10-Linux-64.tar.xz -C /opt/popcorntime
+
+4.ln -sf /opt/popcorntime/Popcorn-Time /usr/bin/Popcorn-Time
+
+5.sudo gedit /usr/share/applications/popcorntime.desktop
+
 [Desktop Entry]
 Version = 1.0
 Type = Application
@@ -17,5 +17,5 @@ Exec = /usr/bin/Popcorn-Time
 Icon = /opt/popcorntime/popcorn.png
 Categories = Application;
 
-sudo wget -O /opt/popcorntime/popcorn.png https://upload.wikimedia.org/wikipedia/commons/d/df/Pctlogo.png
+6.sudo wget -O /opt/popcorntime/popcorn.png https://upload.wikimedia.org/wikipedia/commons/d/df/Pctlogo.png
 完成！
