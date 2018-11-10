@@ -1,1 +1,15 @@
+yum install -y wget
 
+wget https://raw.githubusercontent.com/yobabyshark/wireguard/master/wireguard_install.sh && chmod +x wireguard_install.sh && ./wireguard_install.sh
+执行脚本会弹出选择项，首先我们选择安装内核，安装过程中需要几分钟，最后按照提示重启。
+
+./wireguard_install.sh
+执行命令会弹出和第2步相同的选择项，这次我们选择安装wireguard，安装过程中需要等几分钟，安装完成服务即自行启动了。
+
+使用xftp等ftp工具连接vps，进入/etc/wireguard/目录，然后将client.conf下载到本地电脑。（这个配置文件里面包含的是客户端的各种参数，mac、linux客户端也是使用这些参数。）
+
+下载安装TunSafe，这是一个windows端的第三方客户端，因为官方windows版本的还没开发完成，先用这个软件代替，TunSafe已经开源了，可以放心使用。
+
+打开TunSafe，点击file，选择import file，选择第5步下载的client.conf文件，导入到软件中。
+
+导入后会自动连接，连接成功后，所有流量都会被代理，也就是全局代理。
