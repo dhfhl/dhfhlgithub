@@ -5,7 +5,25 @@ wget https://raw.githubusercontent.com/yobabyshark/wireguard/master/wireguard_in
 
 ./wireguard_install.sh
 执行命令会弹出和第2步相同的选择项，这次我们选择安装wireguard，安装过程中需要等几分钟，安装完成服务即自行启动了。
+查看WireGuard配置（所有客户端，照此文件内容配置）：vi /etc/wireguard/client.conf
 
+在Google Cloud Platform
+VPC网络-放火墙规则
+创建放火墙规则
+名称：随便
+目标：网络中所有实例
+来源IP地址范围：0.0.0.0/0
+协议和端口-指定的协议和端口
+tcp:WireGuard相应端口
+udp:WireGuard相应端口
+最后点击“创建”即可
+
+ios手机端
+通过浏览器打开：https://testflight.apple.com/join/9gbYAJLB
+下载app：TestFlight
+返回浏览器-点击开始测试-之后会自动安装一个TunSafe的软件，打开之后按照GCP中的实例：vi /etc/wireguard/client.conf中的内容配置即可
+
+PC端：（拨号连接无法使用）
 使用xftp等ftp工具连接vps，进入/etc/wireguard/目录，然后将client.conf下载到本地电脑。（这个配置文件里面包含的是客户端的各种参数，mac、linux客户端也是使用这些参数。）
 
 下载安装TunSafe，这是一个windows端的第三方客户端，因为官方windows版本的还没开发完成，先用这个软件代替，TunSafe已经开源了，可以放心使用。
