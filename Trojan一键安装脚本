@@ -2,3 +2,6 @@ Centos7
 curl -O https://raw.githubusercontent.com/atrandys/trojan/master/trojan_install.sh && chmod +x trojan_install.sh && ./trojan_install.sh
 
 备用地址: curl -O https://down.aihoom.com/Shell/trojan_install.sh && chmod +x trojan_install.sh && ./trojan_install.sh
+
+Ubuntu 19.04
+wget -N --no-check-certificate https://raw.githubusercontent.com/mark-hans/trojan-wiz/master/ins.sh && chmod +x ins.sh && sudo bash ins.sh
