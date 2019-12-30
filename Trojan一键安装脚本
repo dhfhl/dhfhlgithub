@@ -1,0 +1,3 @@
+curl -O https://raw.githubusercontent.com/atrandys/trojan/master/trojan_install.sh && chmod +x trojan_install.sh && ./trojan_install.sh
+
+备用地址: curl -O https://down.aihoom.com/Shell/trojan_install.sh && chmod +x trojan_install.sh && ./trojan_install.sh
