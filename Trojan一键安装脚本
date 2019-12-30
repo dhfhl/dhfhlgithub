@@ -1,7 +1,15 @@
-Centos7
-curl -O https://raw.githubusercontent.com/atrandys/trojan/master/trojan_install.sh && chmod +x trojan_install.sh && ./trojan_install.sh
-
-备用地址: curl -O https://down.aihoom.com/Shell/trojan_install.sh && chmod +x trojan_install.sh && ./trojan_install.sh
-
-Ubuntu 19.04
+一键安装trojan，并自动配置
+---------------------------------------------
+开放80和443端口
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --add-port=443/tcp --permanent
+---------------------
+安装wget:
+Centos : sudo yum install wget
+ubuntu/Debian: sudo apt install wget 
+------------------------
+运行trojan一键安装命令：
 wget -N --no-check-certificate https://raw.githubusercontent.com/mark-hans/trojan-wiz/master/ins.sh && chmod +x ins.sh && sudo bash ins.sh
+安装完成启动：trojan服务端
+启动：systemctl start trojan-gfw
+查看状态：systemctl status trojan-gfw
